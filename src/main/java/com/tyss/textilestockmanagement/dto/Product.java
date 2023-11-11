@@ -1,33 +1,30 @@
-package com.tyss.textilestockmanagement.entity;
-
-import java.time.LocalDate;
-import java.util.List;
-
-import org.hibernate.annotations.CreationTimestamp;
+package com.tyss.textilestockmanagement.dto;
 
 import jakarta.persistence.Entity;
 import jakarta.persistence.GeneratedValue;
 import jakarta.persistence.GenerationType;
 import jakarta.persistence.Id;
-import jakarta.persistence.OneToMany;
+import jakarta.persistence.JoinColumn;
+import jakarta.persistence.ManyToOne;
 import lombok.AllArgsConstructor;
 import lombok.Getter;
 import lombok.NoArgsConstructor;
 import lombok.Setter;
+
 @Entity
 @Getter
 @Setter
 @NoArgsConstructor
 @AllArgsConstructor
-public class StockRequest {
+public class Product {
 	@Id
 	@GeneratedValue(strategy = GenerationType.AUTO)
 	private int id;
-	private String status;
-	@CreationTimestamp
-	private LocalDate createdDate;
-	private double totalAmount;
-	@OneToMany
-	private List<Product> products;
+	private String name;
+	private String description;
+	private int quantity;
+	@ManyToOne
+	@JoinColumn(name="product_id")
+	private Inventory inventory;
 
 }

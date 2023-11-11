@@ -1,4 +1,4 @@
-package com.tyss.textilestockmanagement.entity;
+package com.tyss.textilestockmanagement.dto;
 
 import jakarta.persistence.Column;
 import jakarta.persistence.Entity;

@@ -1,14 +1,13 @@
-package com.tyss.textilestockmanagement.entity;
+package com.tyss.textilestockmanagement.dto;
 
-import java.util.List;
-
+import jakarta.persistence.Column;
 import jakarta.persistence.Entity;
 import jakarta.persistence.GeneratedValue;
 import jakarta.persistence.GenerationType;
 import jakarta.persistence.Id;
 import jakarta.persistence.JoinColumn;
-import jakarta.persistence.OneToMany;
 import jakarta.persistence.OneToOne;
+import jakarta.persistence.Table;
 import lombok.AllArgsConstructor;
 import lombok.Getter;
 import lombok.NoArgsConstructor;
@@ -19,16 +18,22 @@ import lombok.Setter;
 @Setter
 @NoArgsConstructor
 @AllArgsConstructor
-public class Inventory {
+@Table(name = "users")
+public class User {
 	@Id
 	@GeneratedValue(strategy = GenerationType.AUTO)
 	private int id;
 	private String name;
+	@Column(unique = true, nullable = true)
+	private String email;
+	private String password;
+	private String gender;
+	private String role;
+	private long phoneNumber;
 	@OneToOne
 	private Address address;
-	@OneToOne(mappedBy = "inventory")
-	private User user;
-	@OneToMany(mappedBy = "inventory")
-	private List<Product> products;
+	@OneToOne
+	@JoinColumn(name="inventory_id")
+	private Inventory inventory;
 
 }
