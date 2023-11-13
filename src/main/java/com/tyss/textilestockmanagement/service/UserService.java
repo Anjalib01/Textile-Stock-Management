@@ -16,12 +16,12 @@ public class UserService {
 	@Autowired
 	private UserDao dao;
 
-	public ResponseEntity<ResponseStructure<User>> saveUser(User user) {
-		User dbUser = dao.saveUser(user);
-		structure.setData(dbUser);
-		structure.setMessage("saved");
-		structure.setStatusCode(HttpStatus.OK.value());
-		return new ResponseEntity<ResponseStructure<User>>(structure, HttpStatus.OK);
-	}
+//	public ResponseEntity<ResponseStructure<User>> saveUser(User user) {
+//		User dbUser = dao.saveUser(user);
+//		structure.setData(dbUser);
+//		structure.setMessage("saved");
+//		structure.setStatusCode(HttpStatus.OK.value());
+//		return new ResponseEntity<ResponseStructure<User>>(structure, HttpStatus.OK);
+//	}
 
 }

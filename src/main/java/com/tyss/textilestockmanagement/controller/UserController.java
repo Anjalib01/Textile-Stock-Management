@@ -16,9 +16,9 @@ public class UserController {
 	@Autowired
 	private UserService service;
 	
-	@PostMapping("/saveUser")
-	public ResponseEntity<ResponseStructure<User>> saveUser(@RequestBody User user) {
-		return service.saveUser(user);		
-	}
+//	@PostMapping("/saveUser")
+//	public ResponseEntity<ResponseStructure<User>> saveUser(@RequestBody User user) {
+//		return service.saveUser(user);		
+//	}
 
 }
