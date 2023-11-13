@@ -14,12 +14,22 @@ public class UserExceptionHandler extends ResponseEntityExceptionHandler {
 	@Autowired
 	private ResponseStructure<String> structure;
 
-	@ExceptionHandler(UserWithGivenEmailIsAlreadyExist.class)
-	public ResponseEntity<ResponseStructure<String>> email(UserWithGivenEmailIsAlreadyExist exist) {
+	@ExceptionHandler(UserWithGivenEmailIsAlreadyExistException.class)
+	public ResponseEntity<ResponseStructure<String>> email(UserWithGivenEmailIsAlreadyExistException exist) {
 		structure.setData(null);
 		structure.setMessage(exist.getMessage());
 		structure.setStatusCode(HttpStatus.NO_CONTENT.value());
 		return new ResponseEntity<ResponseStructure<String>>(structure, HttpStatus.NO_CONTENT);
 	}
+	
+	@ExceptionHandler(UserWithGivenDetailsNotFoundException.class)
+	public ResponseEntity<ResponseStructure<String>> email(UserWithGivenDetailsNotFoundException exist) {
+		structure.setData(null);
+		structure.setMessage(exist.getMessage());
+		structure.setStatusCode(HttpStatus.NO_CONTENT.value());
+		return new ResponseEntity<ResponseStructure<String>>(structure, HttpStatus.NO_CONTENT);
+	}
+	
+	
 
 }

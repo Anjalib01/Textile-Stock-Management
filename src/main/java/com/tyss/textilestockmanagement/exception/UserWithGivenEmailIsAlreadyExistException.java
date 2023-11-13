@@ -1,8 +1,8 @@
 package com.tyss.textilestockmanagement.exception;
 
-public class UserWithGivenEmailIsAlreadyExist extends RuntimeException {
+public class UserWithGivenEmailIsAlreadyExistException extends RuntimeException {
 
-	public UserWithGivenEmailIsAlreadyExist() {
+	public UserWithGivenEmailIsAlreadyExistException() {
 
 	}
 
