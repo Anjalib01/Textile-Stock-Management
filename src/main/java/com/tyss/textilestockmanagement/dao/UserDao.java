@@ -19,4 +19,7 @@ public class UserDao {
 		}
 		throw new UserWithGivenEmailIsAlreadyExist();
 	}
+	public void updateUser() {
+		
+	}
 }
